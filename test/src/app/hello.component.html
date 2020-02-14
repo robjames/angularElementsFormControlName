@@ -1,0 +1,27 @@
+<div>
+<p>hello comp {{'works'}}! </p>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName"   />
+    </label>
+
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+
+  <hr>
+
+
+  <p>
+    Form Value: {{ profileForm.value | json }}
+  </p>
+
+
+  <p>
+    Form Status: {{ profileForm.status }}
+  </p>
+
+  <p>
+    <button (click)="updateProfile()">Update Profile</button>
+  </p>
+</div>
